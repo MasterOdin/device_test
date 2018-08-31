@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Set listener for changes in device orientation...');
-    for (let event of ['deviceorientation', 'deviceorientationabsolute']) {        
+    for (let listener of ['deviceorientation', 'deviceorientationabsolute']) {        
         window.addEventListener('deviceorientationabsolute', (event) => {
-            document.getElementById(event + '-absolute').innerText = "" + event.absolute;
-            document.getElementById(event + '-alpha').innerText = "" + Math.round(event.alpha);
-            document.getElementById(event + '-beta').innerText = "" + Math.round(event.beta);
-            document.getElementById(event + '-gamma').innerText = "" + Math.round(event.gamma);
+            document.getElementById(listener + '-absolute').innerText = "" + event.absolute;
+            document.getElementById(listener + '-alpha').innerText = "" + Math.round(event.alpha);
+            document.getElementById(listener + '-beta').innerText = "" + Math.round(event.beta);
+            document.getElementById(listener + '-gamma').innerText = "" + Math.round(event.gamma);
         });
     }
 });
