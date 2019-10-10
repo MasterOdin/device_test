@@ -16,9 +16,9 @@ let device_orientation = {};
 let device_orientation_absolute = {};
 
 window.addEventListener('deviceorientation', (event) => {
-  relative.children[0].children[1].textContent = event.alpha;
-  relative.children[1].children[1].textContent = event.beta;
-  relative.children[2].children[1].textContent = event.charlie;
+  relative.children[0].children[1].textContent = event.alpha.toFixed(4);
+  relative.children[1].children[1].textContent = event.beta.toFixed(4);
+  relative.children[2].children[1].textContent = event.gamma.toFixed(4);
 
   device_orientation = {
     alpha: event.alpha,
@@ -35,9 +35,9 @@ window.addEventListener('deviceorientationabsolute', (event) => {
     count.style.display = 'none';
     return;
   }
-  absolute.children[0].children[1].textContent = event.alpha;
-  absolute.children[1].children[1].textContent = event.beta;
-  absolute.children[2].children[1].textContent = event.charlie;
+  absolute.children[0].children[1].textContent = event.alpha.toFixed(4);
+  absolute.children[1].children[1].textContent = event.beta.toFixed(4);
+  absolute.children[2].children[1].textContent = event.gamma.toFixed(4);
 
   device_orientation_absolute = {
     alpha: event.alpha,
