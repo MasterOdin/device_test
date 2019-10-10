@@ -29,12 +29,14 @@ window.addEventListener('deviceorientation', (event) => {
 });
 
 window.addEventListener('deviceorientationabsolute', (event) => {
+  /*
   if (event.alpha === null) {
     nope.style.display = 'block';
     button.style.display = 'none';
     count.style.display = 'none';
     return;
   }
+  */
   absolute.children[0].children[1].textContent = event.alpha.toFixed(4);
   absolute.children[1].children[1].textContent = event.beta.toFixed(4);
   absolute.children[2].children[1].textContent = event.gamma.toFixed(4);
