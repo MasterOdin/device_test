@@ -1,22 +1,95 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>API Test</title>
-        <script type="text/javascript" src="server.js"></script>
+        <title>Experiment</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="script.js" type="text/javascript" defer></script>
+        <style type="text/css">
+#content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    font-size: 60px;
+    background-color: lightgreen;
+}
+
+#done {
+    font-size: 60px;
+    display: none;
+}
+
+#count {
+    font-size: 60px;
+    text-align: center;
+}
+
+#nope {
+    font-size: 60px;
+    display: none;
+    display: none;
+    text-align: center;
+}
+
+#debug {
+    display: flex;
+}
+
+.debug-info {
+    display: table;
+    margin-right: 50px;
+    border-spacing: 2px;
+}
+
+.debug-info > div {
+    display: table-row;
+}
+
+.debug-info > div > div {
+    display: table-cell;
+}
+
+        </style>
     </head>
     <body>
-        <h1>DeviceOrientation Event Tests</h1>
-        <h2>DeviceOrientation</h2>
-        Absolute: <div id='deviceorientation-absolute'></div>
-        Alpha: <div id='deviceorientation-alpha'></div>
-        Beta: <div id='deviceorientation-beta'></div>
-        Gamma: <div id='deviceorientation-gamma'></div>
-        
-        <h2>DeviceOrientationAbsolute</h2>
-        Absolute: <div id='deviceorientationabsolute-absolute'></div>
-        Alpha: <div id='deviceorientationabsolute-alpha'></div>
-        Beta: <div id='deviceorientationabsolute-beta'></div>
-        Gamma: <div id='deviceorientationabsolute-gamma'></div>
+        <div id="content">
+            <button id='button'>CLICK</button>
+            <div id="count">0</div>
+            <div id="done">DONE</div>
+            <div id="nope">DOES NOT<br />WORK<br />😢</div>
+        </div>
+        <div id="debug">
+            <div id="relative" class="debug-info">
+                <div>
+                    <div>alpha</div>
+                    <div>0</div>
+                </div>
+                <div>
+                    <div>betta</div>
+                    <div>0</div>
+                </div>
+                <div>
+                    <div>gamma</div>
+                    <div>0</div>
+                </div>
+            </div>
+            <div id="absolute" class="debug-info">
+                <div>
+                    <div>alpha</div>
+                    <div>0</div>
+                </div>
+                <div>
+                    <div>betta</div>
+                    <div>0</div>
+                </div>
+                <div>
+                    <div>gamma</div>
+                    <div>0</div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
