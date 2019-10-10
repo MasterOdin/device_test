@@ -51,7 +51,7 @@ button.addEventListener('click', async () => {
   data_points.push({device_orientation, device_orientation_absolute});
   count.textContent = data_points.length;
   if (data_points.length === 13) {
-    const response = await fetch(window.location.href, {
+    const response = await fetch('http://165.227.212.34:20020/', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
