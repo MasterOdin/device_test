@@ -1,5 +1,8 @@
 let data_points = [];
 const button = document.getElementById('button');
+const instructions_button = document.getElementById('instructions_general_button');
+const debug = document.getElementById('debug');
+const step = document.getElementById('step_num');
 const done = document.getElementById('done');
 const count = document.getElementById('count');
 const nope = document.getElementById('nope');
@@ -52,24 +55,50 @@ window.addEventListener('deviceorientationabsolute', (event) => {
 });
 
 button.addEventListener('click', async () => {
+  document.getElementById(`step_${data_points.length}`).style.display = 'none';
   data_points.push({device_orientation, device_orientation_absolute});
+  let next_step = document.getElementById(`step_${data_points.length}`);
+
+  step.textContent = data_points.length;
   count.textContent = data_points.length;
-  if (data_points.length === 13) {
-    const response = await fetch('https://data.mpeveler.com/', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data_points)
-    });
-    const json = await response.json();
-    if (json.status === 'error') {
-      alert(json.message);
+  if (!next_step) {
+    button.style.display = 'none';
+    count.style.display = 'none';
+    done.style.display = 'block';
+    try {
+      const response = await fetch('https://data.mpeveler.com/', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data_points)
+      });
+      const json = await response.json();
+      if (json.status === 'error') {
+        alert(json.message);
+      }
     }
-    else {
-      button.style.display = 'none';
-      count.style.display = 'none';
-      done.style.display = 'block';
+    catch (exc) {
+      alert("Failed to save data.");
     }
   }
+  else {
+    next_step.style.display = 'block';
+  }
+});
+
+instructions_button.addEventListener('click', () => {
+  document.getElementById('instructions_general').style.display = 'none';
+  document.getElementById('instructions').style.display = 'block';
+
+  content.style.display = 'block';
+  button.style.display = 'block';
+  count.style.display = 'block';
+  relative.style.display = 'table';
+  absolute.style.display = 'table';
+  debug.style.display = 'flex';
+
+  document.getElementById('step').style.display = 'block';
+  step.textContent = data_points.length;
+  document.getElementById(`step_${data_points.length}`).style.display = 'block';
 });

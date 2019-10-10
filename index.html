@@ -10,6 +10,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: none;
 }
 
 button {
@@ -35,7 +36,7 @@ button {
 }
 
 #debug {
-    display: flex;
+    display: none;
 }
 
 .debug-info {
@@ -52,15 +53,16 @@ button {
     display: table-cell;
 }
 
+#instructions {
+    display: none;
+}
+
+#instructions > div {
+    display: none;
+}
         </style>
     </head>
     <body>
-        <div id="content">
-            <button id='button'>CLICK</button>
-            <div id="count">0</div>
-            <div id="done">DONE</div>
-            <div id="nope">DOES NOT<br />WORK<br />😢</div>
-        </div>
         <div id="debug">
             <div id="relative" class="debug-info">
                 <div>
@@ -68,7 +70,7 @@ button {
                     <div>0</div>
                 </div>
                 <div>
-                    <div>betta</div>
+                    <div>beta</div>
                     <div>0</div>
                 </div>
                 <div>
@@ -82,7 +84,7 @@ button {
                     <div>0</div>
                 </div>
                 <div>
-                    <div>betta</div>
+                    <div>beta</div>
                     <div>0</div>
                 </div>
                 <div>
@@ -90,6 +92,122 @@ button {
                     <div>0</div>
                 </div>
             </div>
+        </div>
+
+        <div id="instructions_general">
+<h1>Instructions</h1>
+<p>
+Thank you for participating in this study. During it, you will be asked to point your phone
+in a number of directions and hit a button in the center of the screen to record the orientation of
+the phone at that time. Information collected will be your phone model, browser version, and
+the aforementioned coordinate data points. No identifying information will be collected.<br /><br />
+</p>
+<p>
+When you are ready, hit the continue button below. You will see an instruction on
+the direction to point your phone above a button that says "Click". This instruction will
+get updated each time you press the button.
+</p>
+<p>
+Any comments, questions, or concerns can be directed to Matthew Peveler
+(<a href="mailto:matthew.peveler@ibm.com">matthew.peveler@ibm.com</a>).
+</p>
+<button id="instructions_general_button">Continue</button>
+        </div>
+        <div id="instructions">
+            <div id="step">
+                <h2>Step <span id="step_num"></span></h2>
+            </div>
+            <div id="step_0">
+                Place the phone flat in your hand and point it in front of you.
+            </div>
+            <div id="step_1">
+                Rotate 90 degrees to your left, keeping the phone flat.
+            </div>
+            <div id="step_2">
+                Rotate another 90 degrees to your left, 180 degrees from starting position.
+            </div>
+            <div id="step_3">
+                Rotate another 90 degrees to your left, 90 degrees to the right of the starting position.
+            </div>
+            <div id="step_4">
+                Rotate a final 90 degrees to your left, back to the starting position.
+            </div>
+
+            <div id="step_5">
+                Rotate 90 degrees to your right, keeping the phone flat.
+            </div>
+            <div id="step_6">
+                Rotate another 90 degrees to your right, 180 degrees from the starting position.
+            </div>
+            <div id="step_7">
+                Rotate another 90 degrees to your right, 90 degrees to the left of the starting position.
+            </div>
+            <div id="step_8">
+                Rotate a final 90 degrees to your right, back to the starting position.
+            </div>
+
+            <!--------------------------->
+
+            <div id="step_9">
+                Rotate the phone 90 degrees onto its side, so that the screen is pointing to the left.
+            </div>
+            <div id="step_10">
+                Rotate the phone 90 more degrees, so its screen is facing downward.
+            </div>
+            <div id="step_11">
+                Rotate the phone another 90 degrees, so the screen is pointing to the right.
+            </div>
+            <div id="step_12">
+                Rotate the phone back to its original starting poition.
+            </div>
+
+            <div id="step_13">
+                Rotate the phone 90 degrees onto its side, so that the screen is pointing to the left.
+            </div>
+            <div id="step_14">
+                Rotate the phone 90 more degrees, so its screen is facing downward.
+            </div>
+            <div id="step_15">
+                Rotate the phone another 90 degrees, so the screen is pointing to the right.
+            </div>
+            <div id="step_16">
+                Rotate the phone back to its original poition.
+            </div>
+
+            <!--------------------------->
+
+            <div id="step_17">
+                Rotate the phone so that it is pointing upwards with the screen facing you.
+            </div>
+            <div id="step_18">
+                Rotate the phone 90 degrees to the left so that it is pointing to the left with the screen facing you.
+            </div>
+            <div id="step_19">
+                Rotate the phone so that it is pointing at the ground.
+            </div>
+            <div id="step_20">
+                Rotate the phone another 90 degrees so that it is pointing to the left.
+            </div>
+
+            <div id="step_21">
+                Rotate the phone so that it is pointing upwards with the screen facing you.
+            </div>
+            <div id="step_22">
+                Rotate the phone 90 degrees to the right so that it is pointing to the right with the screen facing you.
+            </div>
+            <div id="step_23">
+                Rotate the phone so that it is pointing at the ground.
+            </div>
+            <div id="step_24">
+                Rotate the phone 90 degrees so that it is pointing to the left.
+            </div>
+        </div>
+
+        <div id="content">
+            <button id='button'>CLICK</button>
+            <div id="count">0</div>
+            <div id="done">DONE<br />thanks</div>
+            <div id="nope">DOES NOT<br />WORK<br />😢</div>
         </div>
     </body>
 </html>
