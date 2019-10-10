@@ -6,11 +6,13 @@ const nope = document.getElementById('nope');
 const relative = document.getElementById('relative');
 const absolute = document.getElementById('absolute');
 
+/*
 if (!('ontouchstart' in window)) {
   nope.style.display = 'block';
   button.style.display = 'none';
   count.style.display = 'none';
 }
+*/
 
 let device_orientation = {};
 let device_orientation_absolute = {};
