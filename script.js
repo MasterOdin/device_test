@@ -61,7 +61,7 @@ button.addEventListener('click', async () => {
 
   step.textContent = data_points.length;
   count.textContent = data_points.length;
-  if (!next_step || data_points.length === 6) {
+  if (!next_step) {
     button.style.display = 'none';
     count.style.display = 'none';
     done.style.display = 'block';
