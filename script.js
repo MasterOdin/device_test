@@ -8,6 +8,7 @@ const count = document.getElementById('count');
 const nope = document.getElementById('nope');
 const relative = document.getElementById('relative');
 const absolute = document.getElementById('absolute');
+const content_elem = document.getElementById('content');
 
 /*
 if (!('ontouchstart' in window)) {
@@ -91,7 +92,7 @@ instructions_button.addEventListener('click', () => {
   document.getElementById('instructions_general').style.display = 'none';
   document.getElementById('instructions').style.display = 'block';
 
-  content.style.display = 'block';
+  content_elem.style.display = 'block';
   button.style.display = 'block';
   count.style.display = 'block';
   relative.style.display = 'table';
