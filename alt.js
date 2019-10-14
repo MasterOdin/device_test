@@ -11,9 +11,24 @@ if (navigator.permissions) {
       const relative = new RelativeOrientationSensor({frequency: 60});
       let absolute = new AbsoluteOrientationSensor({frequency: 60});
       relative.addEventListener('reading', () => {
-        absoluteDiv.innerHTML = `<pre>${JSON.stringify(absolute.quaternion, null, 2)}</pre>`;
-        relativeDiv.innerHTML = `<pre>${JSON.stringify(relative.quaternion, null, 2)}</pre>`;
+
       });
+      relative.onreading = () => {
+        relativeDiv.innerHTML = `<pre>Relative: ${JSON.stringify(relative.quaternion, null, 2)}</pre>`;
+      };
+      relative.onerror = (event) => {
+        if (event.error.name === 'NotReadableError') {
+          alert('relative sensor not available');
+        }
+      }
+      absolute.onreading = () => {
+        absoluteDiv.innerHTML = `<pre>Absolute: ${JSON.stringify(absolute.quaternion, null, 2)}</pre>`
+      }
+      absolute.onerror = (event) => {
+        if (event.error.name === 'NotReadableError') {
+          alert('absolute sensor not available');
+        }
+      }
     }
     else {
       alert('failure...');
