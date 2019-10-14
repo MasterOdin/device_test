@@ -15,7 +15,6 @@ if (navigator.permissions) {
       let absolute = new AbsoluteOrientationSensor({frequency: 60});
       relative.onreading = () => {
         relativeDiv.innerHTML = `<pre>Relative: ${JSON.stringify(relative.quaternion, null, 2)}</pre>`;
-        alert(relative.quaternion);
       };
       relative.onerror = (event) => {
         if (event.error.name === 'NotReadableError') {
