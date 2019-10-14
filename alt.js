@@ -18,6 +18,9 @@ if (navigator.permissions) {
         if (event.error.name === 'NotReadableError') {
           alert('relative sensor not available');
         }
+        else {
+          alert(event.error.name);
+        }
       }
       absolute.onreading = () => {
         absoluteDiv.innerHTML = `<pre>Absolute: ${JSON.stringify(absolute.quaternion, null, 2)}</pre>`
@@ -27,6 +30,8 @@ if (navigator.permissions) {
           alert('absolute sensor not available');
         }
       }
+      relative.start();
+      absolute.start();
     }
     else {
       alert('failure...');
